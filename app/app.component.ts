@@ -6,4 +6,8 @@ import { Component } from "@angular/core";
   templateUrl: "./login/login.component.html",
   styleUrls: ["./login/login.component.css"]
 })
-export class AppComponent {}
+export class AppComponent {
+  submit() {
+    console.log("hello");
+  }
+}
