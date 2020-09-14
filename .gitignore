@@ -66,3 +66,6 @@ Temporary Items
 # e2e
 /e2e/*.js
 /e2e/*.map
+
+# tns preview compilations
+platforms/
