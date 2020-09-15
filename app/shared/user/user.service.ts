@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { throwError } from "rxjs";
-import { catchError } from "rxjs/operators";
+import { catchError, map, tap } from "rxjs/operators";
 import { Config } from "../config";
 import { User } from "./user.model";
 
@@ -37,5 +37,22 @@ export class UserService {
     handleErrors(error: Response) {
         console.log(JSON.stringify(error));
         return throwError(error);
+    }
+
+    login(user: User) {
+      return this.http.post(
+          Config.apiUrl + "user/" + Config.appKey + "/login",
+          JSON.stringify({
+              username: user.email,
+              password: user.password
+          }),
+          { headers: this.getCommonHeaders() }
+      ).pipe(
+          map(response => response),
+          tap(data => {
+              Config.token = (<any>data)._kmd.authtoken
+          }),
+          catchError(this.handleErrors)
+      );
     }
 }

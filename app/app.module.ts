@@ -2,17 +2,22 @@ import { NgModule } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { AppComponent } from "./app.component";
+import { navigatableComponents, routes } from "./app.routing";
 
 @NgModule({
   imports: [
     NativeScriptModule,
-    NativeScriptUIChartModule,
     NativeScriptFormsModule,
-    NativeScriptHttpClientModule
+    NativeScriptHttpClientModule,
+    NativeScriptRouterModule,
+    NativeScriptRouterModule.forRoot(routes)
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ...navigatableComponents
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
