@@ -4,7 +4,6 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 import { AppComponent } from "./app.component";
 
-
 @NgModule({
   imports: [
     NativeScriptModule,
