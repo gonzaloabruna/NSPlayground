@@ -8,12 +8,14 @@ pids
 *.pid.lock
 coverage
 .lock-wscript
-node_modules/
 .npm
 .eslintcache
 .node_repl_history
 *.tgz
 .env
+
+# dependencies
+/node_modules
 
 # Sublime
 *.sublime-workspace
@@ -68,4 +70,4 @@ Temporary Items
 /e2e/*.map
 
 # tns preview compilations
-platforms/
+/platforms
