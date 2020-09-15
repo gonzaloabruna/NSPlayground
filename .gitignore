@@ -71,3 +71,6 @@ Temporary Items
 
 # tns preview compilations
 /platforms
+platforms/
+platforms/android/app/src/main/assets/app/*.js
+platforms/android/app/src/main/assets/app/*.json
