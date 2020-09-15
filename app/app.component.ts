@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { User } from "./shared/user/user.model";
 
 @Component({
   selector: "gr-login",
@@ -7,11 +8,15 @@ import { Component } from "@angular/core";
   styleUrls: ["./login/login.component.css"]
 })
 export class AppComponent {
-  email = "nativescriptrocks@progress.com";
+  user: User;
   isLoggingIn = true;
 
+  constructor() {
+    this.user = new User();
+  }
+
   submit() {
-    alert("You’re using: " + this.email);
+    alert("You’re using: " + this.user.email);
   }
 
   toggleDisplay() {

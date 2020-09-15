@@ -6,9 +6,9 @@
 
     <TextField hint="Email Address" keyboardType="email"
       autocorrect="false" autocapitalizationType="none"
-      [(ngModel)]="email" class="input input-border"></TextField>
+      [(ngModel)]="user.email" class="input input-border"></TextField>
     <TextField hint="Password" secure="true"
-      class="input input-border"></TextField>
+      [(ngModel)]="user.password" class="input input-border"></TextField>
 
     <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="btn btn-primary" (tap)="submit()"></Button>
     <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
