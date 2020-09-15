@@ -7,7 +7,14 @@ import { Component } from "@angular/core";
   styleUrls: ["./login/login.component.css"]
 })
 export class AppComponent {
+  email = "nativescriptrocks@progress.com";
+  isLoggingIn = true;
+
   submit() {
-    console.log("hello");
+    alert("You’re using: " + this.email);
+  }
+
+  toggleDisplay() {
+    this.isLoggingIn = !this.isLoggingIn;
   }
 }

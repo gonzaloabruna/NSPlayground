@@ -6,11 +6,11 @@
 
     <TextField hint="Email Address" keyboardType="email"
       autocorrect="false" autocapitalizationType="none"
-      class="input input-border"></TextField>
+      [(ngModel)]="email" class="input input-border"></TextField>
     <TextField hint="Password" secure="true"
       class="input input-border"></TextField>
 
-    <Button text="Sign in" class="btn btn-primary" (tap)="submit()"></Button>
-    <Button text="Sign up for Groceries"></Button>
+    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="btn btn-primary" (tap)="submit()"></Button>
+    <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
   </StackLayout>
 </FlexboxLayout>
