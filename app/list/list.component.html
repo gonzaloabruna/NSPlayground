@@ -1,2 +1,9 @@
 <ActionBar title="Groceries"></ActionBar>
-<Label text="Hello world"></Label>
+
+<GridLayout>
+  <RadListView [items]="groceryList">
+    <ng-template let-item="item">
+      <Label [text]="item.name" class="p-15"></Label>
+    </ng-template>
+  </RadListView>
+</GridLayout>
